@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+<style>
+  table, th, td {
+    border: 2px solid; font-size: 20px; text-align: centre;
+  }
+</style>
+
+<div class="row"; style="position:absolute; top:10px; left:10px;">
+  <div calss="column"; style="position:absolute; top:1px; left:5px;">
+    <img src="/docs/charts/chart1.png" alt="Average Salary" srcset="">
+    <div style = "position:absolute; top:300px; left:550px;">
+    </div>
+  </div>
+  <div calss="column"; style="position:absolute; top:1px; left:700px;">
+    <img src="/docs/charts/chart2.png" alt="Available Candidates" srcset="">
+    <div style = "position:absolute; top:300px; left:500px;">
+    </div>
+  </div>
+</div>
+<div style = 'position:absolute; top:500px; left:150px; overflow-y: auto; width: 1300px; height: 200px;' >
+  {% autoescape off %}
+    {{detail}}
+  {% endautoescape %}
+</div>
+
+{% endblock %}

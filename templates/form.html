@@ -1,0 +1,46 @@
+</h7>{% extends 'base.html' %}
+{% block body_block %}
+
+<div class="container3"'>
+
+  <form  action="{% url 'form_data' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{{ form.non_field_errors }}</p>
+      <p>{{ form.document.label_tag }} {{form.document.help_text}}</p>
+      <p>
+        {{ form.document.errors }}
+        {{ form.document }}
+      </p>
+      <br>
+      <h7>Select your domain:</h7>
+      <br>
+        {{ form.domain }}
+        <br>
+        <br>
+      <h7>Years of Experience:</h7>
+      <br>
+        {{ form.exp_years }}
+        <br>
+        <br>
+      <h7>Current Salary:</h7>
+        <br>
+        {{ form.salary }}
+        <br>
+        <br>
+      <h7>Expected Salary:</h7>
+      <br>
+        {{ form.exp_salary }}
+        <br>
+        <br>
+      <h7>Enter your key technical skills(comma seperated):</h7>
+      <br>
+        {{ form.skillset }}
+
+      <br>
+      <br>
+      <p> <input type="submit" value='Submit' name='form_load' class="form-btns"> </p>
+
+  </form>
+
+  </div>
+  {% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+<div class="container2">
+  {% include 'alerts.html' %}
+  <h4>Register here</h4>
+  <br>
+  <form  action="{% url 'accounts:register' %}" method="POST" >
+    {% csrf_token %}
+    
+    <div class="form-item">
+      {{ form.first_name }}
+    </div>
+      <br>
+      <div class="form-item">
+      {{ form.last_name }}
+    </div>
+      <br>
+      <div class="form-item">
+      {{ form.email }}
+    </div>
+      <br>
+    <div class="form-item">
+      {{ form.phone_number }}
+    </div>
+      <br>
+      <div class="form-item">
+      {{ form.password }}
+    </div>
+      <br>
+      <div class="form-item">
+      {{ form.confirm_password }}
+    </div>
+      <br>
+
+    <p> <input type="submit" value='Register' name='register' class="form-btns"> </p>
+    {{ form.email.errors }}
+    {{ form.non_field_errors }}
+
+  </form>
+  <div class="options">
+      <a href="{% url 'index' %}">Got Password? Login</a>
+  </div>
+</div>
+
+{% endblock %}

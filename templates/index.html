@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career</title>
+    <style>
+        html {
+            background: #6696cc;
+        }
+
+        .body-content {
+            padding-top: 20vh;
+        }
+
+        .container {
+            width: 350px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            border: 2px solid White;
+            border-radius: 15px;
+            background: white;
+        }
+
+        .logo {
+            margin-bottom: 15px;
+            margin-top: 0px;
+            padding-top: 0;
+        }
+
+        .logo img {
+            width: 150px;
+            margin: 10px;
+            border-radius: 50px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-item {
+            margin: 5px;
+            padding-bottom: 10px;
+            display: flex;
+        }
+
+        .form-item label {
+            display: block;
+            padding: 2px;
+            font-size: 20px;
+            width: 100px;
+        }
+
+        .form-item input {
+            width: 320px;
+            height: 35px;
+            border: 2px solid #e1dede69;
+            border-radius: 20px;
+            background: #e1dede69;
+            color: grey;
+        }
+
+        .form-btns {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding: 10px 0;
+        }
+
+        .form-btns button {
+            margin: auto;
+            font-size: 20px;
+            padding: 5px 15px;
+            border: 2px solid;
+            border-radius: 15px;
+            color: white;
+            background: #178cc6;
+            width: 280px;
+            cursor: pointer;
+        }
+
+        .options {
+            padding-top: 15px;
+            margin: auto;
+        }
+
+        .options a {
+            text-decoration: none;
+            color: black;
+            margin: 0 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+
+        }
+        .options a:hover {
+            color: grey;
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="body-content">
+        <div class="container">
+            <div class="logo">
+                <img src="static/res.png" alt="Company Logo" srcset="">
+            </div>
+
+            <div class="login-form">
+
+                <form action="{% url 'accounts:user_login' %}" method="post">
+                  {% csrf_token %}
+                    {% include 'alerts.html' %}
+                    <div class="form-item">
+                        <!-- <label for="userName">Username:</label> -->
+                        <input type="text" name="email"  placeholder="Email">
+                    </div>
+                    <div class="form-item">
+                        <!-- <label for="passWord">Password:</label> -->
+                        <input type="password" name="password"  placeholder="Password">
+                    </div>
+
+                    <div class="form-btns">
+
+                        <button type="submit">Login</button>
+                        <div class="options">
+                            <a href="{% url 'accounts:register' %}">Sign Up</a>
+                            <a href="{% url 'accounts:forgot_password' %}">Reset Password</a>
+                        </div>
+
+
+                    </div>
+                </form>
+                <p>Copyright &copy; pynest.com</p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
