@@ -12,3 +12,7 @@ Browse to the root directory and install dependencies using "pip install require
 Run the app using the command "python manage.py runserver"
 
 Access the app at the localhost
+
+High Level Flow:
+<img width="916" alt="image" src="https://user-images.githubusercontent.com/86472325/183293285-52ce32c5-3551-4642-b60c-dd3a2c9b1484.png">
+
